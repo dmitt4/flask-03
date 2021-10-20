@@ -1,0 +1,92 @@
+@import "reset.scss";
+
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to top right, #80cbc4, #e1bee7, #80ddea, #d1c4e9);
+}
+
+.nav {
+  width: 250px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  // bottom: 0;
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 5px 7px 10px rgba(0,0,0,0.5);
+
+  &__list {
+    position: relative;
+    list-style: none;
+  }
+
+  &__sub1 {
+    position: absolute;
+    left: 250px;
+    width: 200px;
+    top: 0;
+    opacity: 0;
+    background: rgba(155,39,176, .4);
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,1);
+    transition: 0.5s ease;
+  }
+
+  &__sub2 {
+    position: absolute;
+    left: 200px;
+    width: 200px;
+    top: 0;
+    opacity: 0;
+    background: rgba(155,39,176, .4);
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,1);
+    transition: 0.5s ease;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    a {
+      width: 100%;
+      font-family: arial;
+      font-size: 1.15em;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      padding: 10px 30px;
+      height: 50px;
+      transition: .5s ease;
+      border-radius: 10px;
+    }
+  }
+
+  &__item.dropdown {
+    position: relative;    
+
+    span {
+      position: absolute;
+      right: 20px;
+      font-size: 1.5em;
+    }
+  }
+
+  &__item.dropdown:hover > &__sub1{
+    opacity: initial;
+  }
+
+  &__item.dropdown:hover > &__sub2{
+    opacity: initial;
+  }
+}
+
+.nav__item a:hover {
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+.main {
+  margin-left: 260px;
+}
+
