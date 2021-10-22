@@ -1,56 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <title>{{ title }}</title>
-</head>
-<body>
-  <div class="wrapper">
-    <header class="header">
-      <nav class="header__nav nav">
-        <ul class="nav__list">
-          <li class="nav__item dropdown"><a href="#">file</a>
-            <span>&rsaquo;</span>
-            <ul class="nav__sub1">
-              <li class="nav__item"><a href="#">new file</a></li>
-              <li class="nav__item"><a href="#">open file</a></li>
-              <li class="nav__item"><a href="#">open folder</a></li>
-              <li class="nav__item"><a href="#">save</a></li>
-            </ul>
-          </li>
-          <li class="nav__item"><a href="#">edit</a></li>
-          <li class="nav__item"><a href="#">selection</a></li>
-          <li class="nav__item dropdown"><a href="#">tools</a>
-            <span>&rsaquo;</span>
-            <ul class="nav__sub1">
-              <li class="nav__item"><a href="#">new file</a></li>
-              <li class="nav__item"><a href="#">open file</a></li>
-              <li class="nav__item"><a href="#">open folder</a></li>
-              <li class="nav__item"><a href="#">save</a></li>
-            </ul>
-          </li>
-          <li class="nav__item"><a href="#">view</a></li>
-          <li class="nav__item"><a href="#">project</a></li>
-          <li class="nav__item"><a href="#">about</a></li>
-        </ul>
-      </nav>
+{% extends 'base.html'%}
 
-    </header>
-    
-    <main class="main">
-      {% block main_content %}
-      VOID CONTENT
-      {% endblock %}
-    </main>
+{% block main_content %}
+<div class="container-md">
+  <h1>Actual Data</h1>
+  <hr>
+  
+  <form action="calc" method="post">
+    <div class="row">
+      <div class="col">
+        <label class="form-label">Arguments:</label>
+        <input name="X" type="number" class="form-control" placeholder="X" required>
+        <select name="oper" class="form-control" id="">
+          <option value="+" selected>+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+          <option value="**">**</option>
+        </select>
+        <input name="Y" type="number" class="form-control" placeholder="Y" required>
 
-    <footer class="footer">
-
-    </footer>
-  </div>
-
-</body>
-</html>
+        <input type="submit" class="btn btn-success" value="OK">
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

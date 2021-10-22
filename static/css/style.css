@@ -64,7 +64,7 @@ input, button, textarea, select {
   background: linear-gradient(to top right, #80cbc4, #e1bee7, #80ddea, #d1c4e9);
 }
 
-.nav {
+.cnav {
   width: 250px;
   position: absolute;
   top: 0;
@@ -75,18 +75,18 @@ input, button, textarea, select {
           box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.5);
 }
 
-.nav__list {
+.cnav__list {
   position: relative;
   list-style: none;
 }
 
-.nav__sub1 {
+.cnav__sub1 {
   position: absolute;
   left: 250px;
   width: 200px;
   top: 0;
-  opacity: 0;
-  background: rgba(155, 39, 176, .8);
+  display: none;
+  background: rgba(155, 39, 176, 0.8);
   border-radius: 5px;
   -webkit-box-shadow: 2px 2px 10px black;
           box-shadow: 2px 2px 10px black;
@@ -94,7 +94,7 @@ input, button, textarea, select {
   transition: 0.5s ease;
 }
 
-.nav__sub2 {
+.cnav__sub2 {
   position: absolute;
   left: 200px;
   width: 200px;
@@ -108,7 +108,7 @@ input, button, textarea, select {
   transition: 0.5s ease;
 }
 
-.nav__item {
+.cnav__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,7 +117,7 @@ input, button, textarea, select {
           align-items: center;
 }
 
-.nav__item a {
+.cnav__item a {
   width: 100%;
   font-family: arial;
   font-size: 1.15em;
@@ -131,31 +131,35 @@ input, button, textarea, select {
   border-radius: 10px;
 }
 
-.nav__item.dropdown {
+.cnav__item.dropdown {
   position: relative;
 }
 
-.nav__item.dropdown span {
+.cnav__item.dropdown span {
   position: absolute;
   right: 20px;
   font-size: 1.5em;
 }
 
-.nav__item.dropdown:hover > .nav__sub1 {
+.cnav__item.dropdown:hover > .cnav__sub1 {
+  display: block;
+}
+
+.cnav__item.dropdown:hover > .cnav__sub2 {
   opacity: initial;
 }
 
-.nav__item.dropdown:hover > .nav__sub2 {
-  opacity: initial;
-}
-
-.nav__item a:hover {
+.cnav__item a:hover {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 
-main.main {
+.main {
   margin-left: 250px;
   padding: 10px;
-  height: 100%;
 }
+
+/* input.form-control, select.form-control {
+  display: inline-block;
+  max-width: 10em;
+} */

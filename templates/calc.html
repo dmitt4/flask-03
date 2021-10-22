@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block main_content %}
+<h1>Calculation result</h1>
+<hr>
+<div class="container-md">
+  <div class="row">
+    <div class="col">
+      {% if result_aquired %}
+        <label class="form-label">Actual result is  {{ result }}</label>
+      {% else %}
+        <label class="form-label">Error calculating result</label>
+      {% endif %}
+    </div>
+  </div>
+  <a href="/" class="btn btn-primary">Назад</a>
+</div>
+{% endblock %}
