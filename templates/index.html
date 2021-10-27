@@ -5,21 +5,15 @@
   <h1>Actual Data</h1>
   <hr>
   
-  <form action="calc" method="post">
+  <form action="/" method="post">
     <div class="row">
       <div class="col">
         <label class="form-label">Arguments:</label>
-        <input name="X" type="number" class="form-control" placeholder="X" required>
-        <select name="oper" class="form-control" id="">
-          <option value="+" selected>+</option>
-          <option value="-">-</option>
-          <option value="*">*</option>
-          <option value="/">/</option>
-          <option value="**">**</option>
-        </select>
-        <input name="Y" type="number" class="form-control" placeholder="Y" required>
-
-        <input type="submit" class="btn btn-success" value="OK">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type not in ('submit', 'hidden') %}
+          {{ field(class_="form-control") }}
+        {% endfor %}
+        {{ form.submit(class_="btn btn-primary") }}
       </div>
     </div>
   </form>

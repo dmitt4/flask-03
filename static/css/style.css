@@ -159,7 +159,7 @@ input, button, textarea, select {
   padding: 10px;
 }
 
-/* input.form-control, select.form-control {
+input.form-control, select.form-control {
   display: inline-block;
   max-width: 10em;
-} */
+}
